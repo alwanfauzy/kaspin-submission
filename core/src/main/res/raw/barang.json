@@ -1,0 +1,20 @@
+{
+  "barangs": [
+    {
+      "id": "abcdefg1",
+      "name": "Penggaris",
+      "description": "oeu",
+      "stock": 5,
+      "price": 35000,
+      "imageUrl": "https://id-live-01.slatic.net/p/101c9cf07e59fdf29b954fcb0abc2c92.jpg"
+    },
+    {
+      "id": "cedp244",
+      "name": "Pensil",
+      "description": "Dibuat oleh faber castell, berkualitas tinggi",
+      "stock": 120,
+      "price": 2500,
+      "imageUrl": "https://cf.shopee.co.id/file/94ff9cb95f075235c134f20a879bcf2a"
+    }
+  ]
+}
