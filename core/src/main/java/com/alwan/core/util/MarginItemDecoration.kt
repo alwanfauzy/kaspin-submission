@@ -1,4 +1,4 @@
-package com.alwan.barangku.util
+package com.alwan.core.util
 
 import android.graphics.Rect
 import android.view.View

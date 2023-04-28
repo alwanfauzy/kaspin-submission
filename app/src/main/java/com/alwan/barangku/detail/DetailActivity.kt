@@ -1,11 +1,11 @@
-package com.alwan.barangku.presentation.detail
+package com.alwan.barangku.detail
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.alwan.barangku.R
 import com.alwan.barangku.databinding.ActivityDetailBinding
-import com.alwan.barangku.util.loadImage
-import com.alwan.barangku.util.toIDRString
+import com.alwan.core.util.loadImage
+import com.alwan.core.util.toIDRString
 
 class DetailActivity : AppCompatActivity() {
     private var _binding: ActivityDetailBinding? = null

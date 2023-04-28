@@ -14,7 +14,7 @@
         android:theme="@style/Theme.BarangKu"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.main.MainActivity"
+            android:name=".main.MainActivity"
             android:exported="true"
             android:label="Daftar Barang">
             <intent-filter>
@@ -24,10 +24,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".presentation.detail.DetailActivity"
+            android:name=".detail.DetailActivity"
             android:exported="true"
             android:label="Detail Barang"
-            android:parentActivityName=".presentation.main.MainActivity" />
+            android:parentActivityName=".main.MainActivity" />
     </application>
 
 </manifest>

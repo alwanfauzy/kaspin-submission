@@ -14,33 +14,4 @@
         <!-- Customize your theme here. -->
         <item name="android:windowBackground">@color/grey</item>
     </style>
-
-    <!-- Typography  -->
-    <style name="TextCaption">
-        <item name="android:textSize">@dimen/font_12sp</item>
-        <item name="android:textColor">@color/grey_darker</item>
-    </style>
-
-    <style name="TextNormal">
-        <item name="android:textSize">@dimen/font_14sp</item>
-        <item name="android:textColor">@color/black</item>
-    </style>
-
-    <style name="TextMedium">
-        <item name="android:textSize">@dimen/font_16sp</item>
-        <item name="android:textColor">@color/black</item>
-    </style>
-
-    <style name="TextMedium.Bold">
-        <item name="android:textStyle">bold</item>
-    </style>
-
-    <style name="TextLarge">
-        <item name="android:textSize">@dimen/font_20sp</item>
-        <item name="android:textColor">@color/black</item>
-    </style>
-
-    <style name="TextLarge.Bold">
-        <item name="android:textStyle">bold</item>
-    </style>
 </resources>

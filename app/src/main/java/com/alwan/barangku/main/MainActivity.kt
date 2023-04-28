@@ -1,20 +1,19 @@
-package com.alwan.barangku.presentation.main
+package com.alwan.barangku.main
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.alwan.barangku.R
 import com.alwan.barangku.databinding.ActivityMainBinding
-import com.alwan.barangku.domain.model.Barang
-import com.alwan.barangku.presentation.detail.DetailActivity
-import com.alwan.barangku.util.MarginItemDecoration
+import com.alwan.barangku.detail.DetailActivity
+import com.alwan.core.R
+import com.alwan.core.domain.model.Barang
 import kotlin.math.roundToInt
 
 class MainActivity : AppCompatActivity() {
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding!!
-    private lateinit var barangAdapter: BarangAdapter
+    private lateinit var barangAdapter: com.alwan.core.ui.BarangAdapter
     private val dummyBarangs = listOf(
         Barang(
             "p1423ud",
@@ -96,13 +95,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerView() {
-        barangAdapter = BarangAdapter { onBarangClicked(it) }
+        barangAdapter = com.alwan.core.ui.BarangAdapter { onBarangClicked(it) }
         barangAdapter.submitList(dummyBarangs)
 
         binding.rvBarang.apply {
             layoutManager = LinearLayoutManager(context)
             addItemDecoration(
-                MarginItemDecoration(
+                com.alwan.core.util.MarginItemDecoration(
                     resources.getDimension(R.dimen.spacing_16dp).roundToInt()
                 )
             )

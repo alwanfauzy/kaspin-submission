@@ -1,14 +1,14 @@
-package com.alwan.barangku.presentation.main
+package com.alwan.core.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.alwan.barangku.databinding.ItemBarangBinding
-import com.alwan.barangku.domain.model.Barang
-import com.alwan.barangku.util.loadImage
-import com.alwan.barangku.util.toIDRString
+import com.alwan.core.databinding.ItemBarangBinding
+import com.alwan.core.domain.model.Barang
+import com.alwan.core.util.loadImage
+import com.alwan.core.util.toIDRString
 
 class BarangAdapter(private val onBarangClicked: (Barang) -> Unit) :
     ListAdapter<Barang, BarangAdapter.BarangViewHolder>(DIFF_CALLBACK) {
@@ -34,11 +34,17 @@ class BarangAdapter(private val onBarangClicked: (Barang) -> Unit) :
 
     companion object {
         private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<Barang>() {
-            override fun areItemsTheSame(oldItem: Barang, newItem: Barang): Boolean {
+            override fun areItemsTheSame(
+                oldItem: Barang,
+                newItem: Barang
+            ): Boolean {
                 return oldItem.code == newItem.code
             }
 
-            override fun areContentsTheSame(oldItem: Barang, newItem: Barang): Boolean {
+            override fun areContentsTheSame(
+                oldItem: Barang,
+                newItem: Barang
+            ): Boolean {
                 return oldItem == newItem
             }
         }

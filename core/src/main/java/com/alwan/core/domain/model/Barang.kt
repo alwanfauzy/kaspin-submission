@@ -1,6 +1,4 @@
-package com.alwan.barangku.domain.model
-
-import java.math.BigDecimal
+package com.alwan.core.domain.model
 
 data class Barang(
     val code: String,
