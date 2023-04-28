@@ -1,11 +1,13 @@
 package com.alwan.barangku.presentation.main
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.alwan.barangku.R
 import com.alwan.barangku.databinding.ActivityMainBinding
 import com.alwan.barangku.domain.model.Barang
+import com.alwan.barangku.presentation.detail.DetailActivity
 import com.alwan.barangku.util.MarginItemDecoration
 import kotlin.math.roundToInt
 
@@ -110,6 +112,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onBarangClicked(barang: Barang) {
+        val detailIntent = Intent(this, DetailActivity::class.java)
 
+        startActivity(detailIntent)
     }
 }

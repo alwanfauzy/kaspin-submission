@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".presentation.detail.DetailActivity">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/spacing_16dp"
+            android:layout_marginTop="@dimen/spacing_32dp"
+            app:cardCornerRadius="@dimen/spacing_16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/sivBarang"
+                    android:layout_width="@dimen/spacing_100dp"
+                    android:layout_height="@dimen/spacing_100dp"
+                    android:layout_marginVertical="@dimen/spacing_32dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/placeholder"
+                    app:shapeAppearanceOverlay="@style/RoundedSquare" />
+
+                <TextView
+                    android:id="@+id/tvNama"
+                    style="@style/TextLarge.Bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/spacing_32dp"
+                    tools:text="Barang 123" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_16dp"
+            android:layout_marginBottom="@dimen/spacing_32dp"
+            app:cardCornerRadius="@dimen/spacing_16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/cv"
+            app:layout_constraintStart_toStartOf="@id/cv"
+            app:layout_constraintTop_toBottomOf="@id/cv">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/spacing_16dp"
+                android:paddingVertical="@dimen/spacing_32dp">
+
+                <TextView
+                    android:id="@+id/tvDescKode"
+                    style="@style/TextMedium.Bold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@string/kode"
+                    app:layout_constraintBottom_toBottomOf="@id/tvColon"
+                    app:layout_constraintEnd_toStartOf="@+id/tvColon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/tvColon" />
+
+                <TextView
+                    android:id="@+id/tvColon"
+                    style="@style/TextMedium.Bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/colon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvKode"
+                    style="@style/TextNormal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/spacing_16dp"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    app:layout_constraintBottom_toBottomOf="@id/tvColon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvColon"
+                    app:layout_constraintTop_toTopOf="@id/tvColon"
+                    tools:text="abcdefghijklmnopqrstuvwxyz" />
+
+                <TextView
+                    android:id="@+id/tvDescHarga"
+                    style="@style/TextMedium.Bold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@string/harga_jual"
+                    app:layout_constraintBottom_toBottomOf="@id/tvColon2"
+                    app:layout_constraintEnd_toEndOf="@id/tvDescKode"
+                    app:layout_constraintStart_toStartOf="@id/tvDescKode"
+                    app:layout_constraintTop_toTopOf="@id/tvColon2" />
+
+                <TextView
+                    android:id="@+id/tvColon2"
+                    style="@style/TextMedium.Bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_16dp"
+                    android:text="@string/colon"
+                    app:layout_constraintEnd_toEndOf="@id/tvColon"
+                    app:layout_constraintStart_toStartOf="@id/tvColon"
+                    app:layout_constraintTop_toBottomOf="@id/tvColon" />
+
+                <TextView
+                    android:id="@+id/tvHarga"
+                    style="@style/TextNormal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    app:layout_constraintBottom_toBottomOf="@id/tvColon2"
+                    app:layout_constraintEnd_toEndOf="@id/tvKode"
+                    app:layout_constraintStart_toStartOf="@id/tvKode"
+                    app:layout_constraintTop_toTopOf="@id/tvColon2"
+                    tools:text="Rp. 50.000" />
+
+                <TextView
+                    android:id="@+id/tvDescStok"
+                    style="@style/TextMedium.Bold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@string/stok"
+                    app:layout_constraintBottom_toBottomOf="@id/tvColon3"
+                    app:layout_constraintEnd_toEndOf="@id/tvDescKode"
+                    app:layout_constraintStart_toStartOf="@id/tvDescKode"
+                    app:layout_constraintTop_toTopOf="@id/tvColon3" />
+
+                <TextView
+                    android:id="@+id/tvColon3"
+                    style="@style/TextMedium.Bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_16dp"
+                    android:text="@string/colon"
+                    app:layout_constraintEnd_toEndOf="@id/tvColon2"
+                    app:layout_constraintStart_toStartOf="@id/tvColon2"
+                    app:layout_constraintTop_toBottomOf="@id/tvColon2" />
+
+                <TextView
+                    android:id="@+id/tvStok"
+                    style="@style/TextNormal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    app:layout_constraintBottom_toBottomOf="@id/tvColon3"
+                    app:layout_constraintEnd_toEndOf="@id/tvKode"
+                    app:layout_constraintStart_toStartOf="@id/tvKode"
+                    app:layout_constraintTop_toTopOf="@id/tvColon3"
+                    tools:text="50 item" />
+
+                <TextView
+                    android:id="@+id/tvDescKeterangan"
+                    style="@style/TextMedium.Bold"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@string/keterangan"
+                    app:layout_constraintBottom_toBottomOf="@id/tvColon4"
+                    app:layout_constraintEnd_toEndOf="@id/tvDescKode"
+                    app:layout_constraintStart_toStartOf="@id/tvDescKode"
+                    app:layout_constraintTop_toTopOf="@id/tvColon4" />
+
+                <TextView
+                    android:id="@+id/tvColon4"
+                    style="@style/TextMedium.Bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_16dp"
+                    android:text="@string/colon"
+                    app:layout_constraintEnd_toEndOf="@id/tvColon3"
+                    app:layout_constraintStart_toStartOf="@id/tvColon3"
+                    app:layout_constraintTop_toBottomOf="@id/tvColon3" />
+
+                <TextView
+                    android:id="@+id/tvKeterangan"
+                    style="@style/TextNormal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/tvKode"
+                    app:layout_constraintStart_toStartOf="@id/tvKode"
+                    app:layout_constraintTop_toTopOf="@id/tvColon4"
+                    tools:text="@string/lorem_ipsum" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
