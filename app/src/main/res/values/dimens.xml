@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="spacing_100dp">100dp</dimen>
-    <dimen name="spacing_55dp">55dp</dimen>
+    <dimen name="spacing_65dp">65dp</dimen>
     <dimen name="spacing_32dp">32dp</dimen>
     <dimen name="spacing_24dp">24dp</dimen>
     <dimen name="spacing_16dp">16dp</dimen>
+    <dimen name="spacing_12dp">12dp</dimen>
     <dimen name="spacing_8dp">8dp</dimen>
 
     <dimen name="font_20sp">20sp</dimen>
     <dimen name="font_16sp">16sp</dimen>
     <dimen name="font_14sp">14sp</dimen>
     <dimen name="font_12sp">12sp</dimen>
-
 </resources>

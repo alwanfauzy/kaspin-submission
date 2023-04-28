@@ -10,13 +10,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="?attr/selectableItemBackground"
         android:paddingHorizontal="@dimen/spacing_24dp"
-        android:paddingVertical="12dp">
+        android:paddingVertical="@dimen/spacing_12dp">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/sivBarang"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
+            android:layout_width="@dimen/spacing_65dp"
+            android:layout_height="@dimen/spacing_65dp"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
