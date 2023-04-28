@@ -20,3 +20,10 @@ fun Long.toIDRString(): String {
     currencyFormatter.applyPattern("Rp ###,###,###")
     return currencyFormatter.format(this)
 }
+
+fun Int?.orZero() = 0
+fun Long?.orZero() = 0L
+
+fun String?.orEmpty() = ""
+fun String?.orImageUrlPlaceholder() =
+    "https://roadmap-tech.com/wp-content/uploads/2019/04/placeholder-image.jpg"
