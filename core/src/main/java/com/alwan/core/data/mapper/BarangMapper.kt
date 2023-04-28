@@ -5,8 +5,9 @@ import com.alwan.core.domain.model.Barang
 import com.alwan.core.util.orEmpty
 import com.alwan.core.util.orImageUrlPlaceholder
 import com.alwan.core.util.orZero
+import javax.inject.Inject
 
-class BarangMapper {
+class BarangMapper @Inject constructor() {
     fun mapEntitiesToDomains(from: List<BarangEntity>) = from.map {
         mapEntityToDomain(it)
     }

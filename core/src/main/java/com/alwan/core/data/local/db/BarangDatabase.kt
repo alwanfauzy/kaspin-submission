@@ -7,6 +7,5 @@ import com.alwan.core.data.local.entity.BarangEntity
 
 @Database(entities = [BarangEntity::class], version = 1, exportSchema = false)
 abstract class BarangDatabase : RoomDatabase() {
-
     abstract fun barangDao(): BarangDao
 }

@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface BarangDao {
-    @Query("SELECT * FROM favorite_anime")
+    @Query("SELECT * FROM barang")
     fun getAllBarang(): Flow<List<BarangEntity>>
 
     @Query("SELECT * FROM barang WHERE id = :id")
