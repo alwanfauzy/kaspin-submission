@@ -1,10 +1,10 @@
-# kaspin-submission
-BarangKu, Kasir Pintar Submission
+# Barangku
+Kasir Pintar Submission
 
 
-| e | e |
+| Main | Detail |
 |---|---|
-| e | e |
+| ![Main](https://drive.google.com/uc?id=1JB6g_iKmaVf_ENNa0m_6WB5-aN4fooIC) | ![Detail](https://drive.google.com/uc?id=1PshgJkI4oUwjjt21R-gkCcqBOA1sQwAY) |
 
 ## Technologies used:
 1. Clean Architecture MVVM
