@@ -12,7 +12,7 @@ class BarangMapper @Inject constructor() {
         mapEntityToDomain(it)
     }
 
-    fun mapEntityToDomain(from: BarangEntity) = com.alwan.core.domain.model.Barang(
+    fun mapEntityToDomain(from: BarangEntity) = Barang(
         code = from.id,
         name = from.name.orEmpty(),
         description = from.description.orEmpty(),

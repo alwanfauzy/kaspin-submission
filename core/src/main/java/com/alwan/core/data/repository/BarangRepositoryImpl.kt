@@ -11,12 +11,12 @@ import javax.inject.Inject
 class BarangRepositoryImpl @Inject constructor(
     private val barangLocalDataSource: BarangLocalDataSource,
     private val barangMapper: BarangMapper
-) : com.alwan.core.domain.repository.BarangRepository {
-    override fun getAllBarang(): Flow<List<com.alwan.core.domain.model.Barang>> = barangLocalDataSource.getAllBarang().map {
+) : BarangRepository {
+    override fun getAllBarang(): Flow<List<Barang>> = barangLocalDataSource.getAllBarang().map {
         barangMapper.mapEntitiesToDomains(it)
     }
 
-    override fun getBarangById(id: String): Flow<com.alwan.core.domain.model.Barang> = barangLocalDataSource.getBarangById(id).map {
+    override fun getBarangById(id: String): Flow<Barang> = barangLocalDataSource.getBarangById(id).map {
         barangMapper.mapEntityToDomain(it)
     }
 }

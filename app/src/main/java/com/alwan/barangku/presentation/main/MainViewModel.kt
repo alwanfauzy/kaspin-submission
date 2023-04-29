@@ -7,6 +7,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class MainViewModel @Inject constructor(private val barangUseCase: com.alwan.core.domain.usecase.BarangUseCase) : ViewModel() {
+class MainViewModel @Inject constructor(private val barangUseCase: BarangUseCase) : ViewModel() {
     fun getAllBarang() = barangUseCase.getAllBarang().asLiveData()
 }

@@ -10,8 +10,8 @@ import com.alwan.core.domain.model.Barang
 import com.alwan.core.util.loadImage
 import com.alwan.core.util.toIDRString
 
-class BarangAdapter(private val onBarangClicked: (com.alwan.core.domain.model.Barang) -> Unit) :
-    ListAdapter<com.alwan.core.domain.model.Barang, BarangAdapter.BarangViewHolder>(DIFF_CALLBACK) {
+class BarangAdapter(private val onBarangClicked: (Barang) -> Unit) :
+    ListAdapter<Barang, BarangAdapter.BarangViewHolder>(DIFF_CALLBACK) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = BarangViewHolder(
         ItemBarangBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -23,7 +23,7 @@ class BarangAdapter(private val onBarangClicked: (com.alwan.core.domain.model.Ba
 
     inner class BarangViewHolder(private val binding: ItemBarangBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(barang: com.alwan.core.domain.model.Barang) = binding.apply {
+        fun bind(barang: Barang) = binding.apply {
             sivBarang.loadImage(barang.imageUrl)
             tvBarang.text = barang.name
             tvKode.text = barang.code
@@ -33,17 +33,17 @@ class BarangAdapter(private val onBarangClicked: (com.alwan.core.domain.model.Ba
     }
 
     companion object {
-        private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<com.alwan.core.domain.model.Barang>() {
+        private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<Barang>() {
             override fun areItemsTheSame(
-                oldItem: com.alwan.core.domain.model.Barang,
-                newItem: com.alwan.core.domain.model.Barang
+                oldItem: Barang,
+                newItem: Barang
             ): Boolean {
                 return oldItem.code == newItem.code
             }
 
             override fun areContentsTheSame(
-                oldItem: com.alwan.core.domain.model.Barang,
-                newItem: com.alwan.core.domain.model.Barang
+                oldItem: Barang,
+                newItem: Barang
             ): Boolean {
                 return oldItem == newItem
             }

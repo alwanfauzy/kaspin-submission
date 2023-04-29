@@ -1,8 +1,9 @@
+package com.alwan.core.data.repository
+
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.asLiveData
-import com.alwan.core.di.local.datasource.BarangLocalDataSource
 import com.alwan.core.data.mapper.BarangMapper
-import com.alwan.core.data.repository.BarangRepositoryImpl
+import com.alwan.core.di.local.datasource.BarangLocalDataSource
 import com.alwan.core.domain.repository.BarangRepository
 import com.alwan.core.util.Dummy
 import com.alwan.core.util.MainDispatcherRule
@@ -34,7 +35,7 @@ class BarangRepositoryTest {
     private lateinit var barangLocalDataSource: BarangLocalDataSource
 
     private lateinit var barangMapper: BarangMapper
-    private lateinit var barangRepository: com.alwan.core.domain.repository.BarangRepository
+    private lateinit var barangRepository: BarangRepository
 
     @Before
     fun setUp() {

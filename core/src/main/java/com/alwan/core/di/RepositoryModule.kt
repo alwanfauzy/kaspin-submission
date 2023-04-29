@@ -12,5 +12,5 @@ import dagger.hilt.components.SingletonComponent
 abstract class RepositoryModule {
 
     @Binds
-    abstract fun provideBarangRepository(barangRepository: BarangRepositoryImpl): com.alwan.core.domain.repository.BarangRepository
+    abstract fun provideBarangRepository(barangRepository: BarangRepositoryImpl): BarangRepository
 }

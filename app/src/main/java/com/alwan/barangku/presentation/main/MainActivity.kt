@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun onBarangClicked(barang: com.alwan.core.domain.model.Barang) {
+    private fun onBarangClicked(barang: Barang) {
         val detailIntent = Intent(this, DetailActivity::class.java).apply {
             putExtra(DetailActivity.EXTRA_BARANG_ID, barang.code)
         }

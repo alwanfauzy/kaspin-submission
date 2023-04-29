@@ -30,7 +30,7 @@ class DetailViewModelTest {
     val mainDispatcherRule = MainDispatcherRule()
 
     @Mock
-    private lateinit var barangUseCase: com.alwan.core.domain.usecase.BarangUseCase
+    private lateinit var barangUseCase: BarangUseCase
 
     private lateinit var detailViewModel: DetailViewModel
 
