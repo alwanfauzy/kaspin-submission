@@ -1,15 +1,20 @@
-package com.alwan.barangku.detail
+package com.alwan.barangku.presentation.detail
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.alwan.barangku.R
 import com.alwan.barangku.databinding.ActivityDetailBinding
+import com.alwan.core.domain.model.Barang
 import com.alwan.core.util.loadImage
 import com.alwan.core.util.toIDRString
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DetailActivity : AppCompatActivity() {
     private var _binding: ActivityDetailBinding? = null
     private val binding get() = _binding!!
+    private val detailViewModel: DetailViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,8 +23,8 @@ class DetailActivity : AppCompatActivity() {
 
         setupActionBar()
 
-        val barangId = intent.getIntExtra(EXTRA_BARANG_ID, 0)
-        populateDetail(barangId)
+        val barangId = intent.getStringExtra(EXTRA_BARANG_ID).orEmpty()
+        initViewModel(barangId)
     }
 
     override fun onDestroy() {
@@ -32,13 +37,19 @@ class DetailActivity : AppCompatActivity() {
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_arrow_back)
     }
 
-    private fun populateDetail(id: Int) = binding.apply {
-        tvNama.text = "Barang 123"
-        tvKode.text = "abcdefghijklmnopqrstuvwxyz"
-        tvHarga.text = 20000L.toIDRString()
-        tvStok.text = "20 Item"
-        tvKeterangan.text = getString(R.string.lorem_ipsum)
-        sivBarang.loadImage("https://id-live-01.slatic.net/p/101c9cf07e59fdf29b954fcb0abc2c92.jpg")
+    private fun initViewModel(id: String) {
+        detailViewModel.getBarangById(id).observe(this) {
+            populateDetail(it)
+        }
+    }
+
+    private fun populateDetail(barang: Barang) = binding.apply {
+        tvNama.text = barang.name
+        tvKode.text = barang.code
+        tvHarga.text = barang.price.toIDRString()
+        tvStok.text = getString(R.string.stok_item, barang.stock)
+        tvKeterangan.text = barang.description
+        sivBarang.loadImage(barang.imageUrl)
     }
 
     companion object {

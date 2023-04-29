@@ -1,4 +1,4 @@
-package com.alwan.barangku.main
+package com.alwan.barangku.presentation.main
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData

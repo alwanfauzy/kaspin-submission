@@ -1,4 +1,4 @@
-package com.alwan.barangku.main
+package com.alwan.barangku.presentation.main
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,7 +6,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.alwan.barangku.databinding.ActivityMainBinding
-import com.alwan.barangku.detail.DetailActivity
+import com.alwan.barangku.presentation.detail.DetailActivity
 import com.alwan.core.R
 import com.alwan.core.domain.model.Barang
 import com.alwan.core.ui.BarangAdapter
@@ -57,7 +57,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun onBarangClicked(barang: Barang) {
-        val detailIntent = Intent(this, DetailActivity::class.java)
+        val detailIntent = Intent(this, DetailActivity::class.java).apply {
+            putExtra(DetailActivity.EXTRA_BARANG_ID, barang.code)
+        }
 
         startActivity(detailIntent)
     }
