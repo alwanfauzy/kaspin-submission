@@ -1,6 +1,6 @@
 package com.alwan.core.util
 
-import com.alwan.core.data.local.entity.BarangEntity
+import com.alwan.core.di.local.entity.BarangEntity
 import com.alwan.core.domain.model.Barang
 
 object Dummy {

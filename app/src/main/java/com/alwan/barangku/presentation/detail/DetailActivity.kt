@@ -43,7 +43,7 @@ class DetailActivity : AppCompatActivity() {
         }
     }
 
-    private fun populateDetail(barang: Barang) = binding.apply {
+    private fun populateDetail(barang: com.alwan.core.domain.model.Barang) = binding.apply {
         tvNama.text = barang.name
         tvKode.text = barang.code
         tvHarga.text = barang.price.toIDRString()

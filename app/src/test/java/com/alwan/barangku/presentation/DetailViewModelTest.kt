@@ -1,6 +1,7 @@
-package com.alwan.barangku.presentation.detail
+package com.alwan.barangku.presentation
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import com.alwan.barangku.presentation.detail.DetailViewModel
 import com.alwan.barangku.util.MainDispatcherRule
 import com.alwan.core.domain.usecase.BarangUseCase
 import com.alwan.core.util.Dummy
@@ -29,7 +30,7 @@ class DetailViewModelTest {
     val mainDispatcherRule = MainDispatcherRule()
 
     @Mock
-    private lateinit var barangUseCase: BarangUseCase
+    private lateinit var barangUseCase: com.alwan.core.domain.usecase.BarangUseCase
 
     private lateinit var detailViewModel: DetailViewModel
 

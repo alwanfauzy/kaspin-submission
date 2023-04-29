@@ -14,5 +14,5 @@ abstract class AppModule {
 
     @Binds
     @Singleton
-    abstract fun provideBarangUseCase(barangInteractor: BarangInteractor): BarangUseCase
+    abstract fun provideBarangUseCase(barangInteractor: com.alwan.core.domain.usecase.BarangInteractor): com.alwan.core.domain.usecase.BarangUseCase
 }

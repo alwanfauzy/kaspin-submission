@@ -5,9 +5,9 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.alwan.core.R
-import com.alwan.core.data.local.dao.BarangDao
-import com.alwan.core.data.local.db.BarangDatabase
-import com.alwan.core.data.local.entity.BarangEntity
+import com.alwan.core.di.local.dao.BarangDao
+import com.alwan.core.di.local.db.BarangDatabase
+import com.alwan.core.di.local.entity.BarangEntity
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

@@ -1,6 +1,6 @@
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.asLiveData
-import com.alwan.core.data.local.datasource.BarangDataSource
+import com.alwan.core.di.local.datasource.BarangLocalDataSource
 import com.alwan.core.data.mapper.BarangMapper
 import com.alwan.core.data.repository.BarangRepositoryImpl
 import com.alwan.core.domain.repository.BarangRepository
@@ -31,15 +31,15 @@ class BarangRepositoryTest {
     val mainDispatcherRule = MainDispatcherRule()
 
     @Mock
-    private lateinit var barangDataSource: BarangDataSource
+    private lateinit var barangLocalDataSource: BarangLocalDataSource
 
     private lateinit var barangMapper: BarangMapper
-    private lateinit var barangRepository: BarangRepository
+    private lateinit var barangRepository: com.alwan.core.domain.repository.BarangRepository
 
     @Before
     fun setUp() {
         barangMapper = BarangMapper()
-        barangRepository = BarangRepositoryImpl(barangDataSource, barangMapper)
+        barangRepository = BarangRepositoryImpl(barangLocalDataSource, barangMapper)
     }
 
     @Test
@@ -48,11 +48,11 @@ class BarangRepositoryTest {
         val dummyListBarang = barangMapper.mapEntitiesToDomains(dummyListBarangEntities)
 
         val expected = flowOf(dummyListBarangEntities)
-        `when`(barangDataSource.getAllBarang()).thenReturn(expected)
+        `when`(barangLocalDataSource.getAllBarang()).thenReturn(expected)
 
         val actual = barangRepository.getAllBarang().asLiveData().getOrAwaitValue()
 
-        verify(barangDataSource).getAllBarang()
+        verify(barangLocalDataSource).getAllBarang()
         assertEquals(dummyListBarang.size, actual.size)
         assertEquals(dummyListBarang[0], actual[0])
         assertEquals(dummyListBarang[0].code, actual[0].code)
@@ -70,11 +70,11 @@ class BarangRepositoryTest {
         val dummyBarang = barangMapper.mapEntityToDomain(dummyBarangEntity)
 
         val expected = flowOf(dummyBarangEntity)
-        `when`(barangDataSource.getBarangById(barangId)).thenReturn(expected)
+        `when`(barangLocalDataSource.getBarangById(barangId)).thenReturn(expected)
 
         val actual = barangRepository.getBarangById(barangId).asLiveData().getOrAwaitValue()
 
-        verify(barangDataSource).getBarangById(barangId)
+        verify(barangLocalDataSource).getBarangById(barangId)
         assertEquals(dummyBarang, actual)
         assertEquals(dummyBarang.code, actual.code)
         assertEquals(dummyBarang.name, actual.name)

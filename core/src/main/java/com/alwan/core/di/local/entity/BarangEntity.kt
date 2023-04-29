@@ -1,4 +1,4 @@
-package com.alwan.core.data.local.entity
+package com.alwan.core.di.local.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
