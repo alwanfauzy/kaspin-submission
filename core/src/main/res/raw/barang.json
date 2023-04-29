@@ -3,18 +3,42 @@
     {
       "id": "abcdefg1",
       "name": "Penggaris",
-      "description": "oeu",
-      "stock": 5,
-      "price": 35000,
-      "imageUrl": "https://id-live-01.slatic.net/p/101c9cf07e59fdf29b954fcb0abc2c92.jpg"
+      "description": "Penggaris dengan panjang 20cm dengan bahan plastik akrilik",
+      "stock": 250,
+      "price": 5000,
+      "imageUrl": "https://drive.google.com/uc?id=1KkSts9FdyY3j1EP15k0XTrYSFDIMcjFv"
     },
     {
-      "id": "cedp244",
+      "id": "abcdefg2",
       "name": "Pensil",
       "description": "Dibuat oleh faber castell, berkualitas tinggi",
-      "stock": 120,
+      "stock": 525,
       "price": 2500,
-      "imageUrl": "https://cf.shopee.co.id/file/94ff9cb95f075235c134f20a879bcf2a"
+      "imageUrl": "https://drive.google.com/uc?id=1KiG5NTed5IKphVWp9yRkSX786Ch8RfOj"
+    },
+    {
+      "id": "abcdefg3",
+      "name": "Penghapus",
+      "description": "Menghapus bekas pensil dengan bersih",
+      "stock": 200,
+      "price": 1500,
+      "imageUrl": "https://drive.google.com/uc?id=1KiWe6d5k3ASE5V580HcMFWbHK2KnZ4zo"
+    },
+    {
+      "id": "abcdefg4",
+      "name": "Buku A5",
+      "description": "Buku dengan ukuran A5, cocok untuk pelajar",
+      "stock": 125,
+      "price": 200,
+      "imageUrl": "https://drive.google.com/uc?id=1KoPfqFlvQPktoLZvFSfGsszJjaNlYOkq"
+    },
+    {
+      "id": "abcdefg5",
+      "name": "Buku B5",
+      "description": "Buku dengan ukuran B5, cocok untuk dibawa kemana-mana",
+      "stock": 60,
+      "price": 2500,
+      "imageUrl": "https://drive.google.com/uc?id=1KoPfqFlvQPktoLZvFSfGsszJjaNlYOkq"
     }
   ]
 }

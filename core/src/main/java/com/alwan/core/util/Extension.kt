@@ -21,9 +21,9 @@ fun Long.toIDRString(): String {
     return currencyFormatter.format(this)
 }
 
-fun Int?.orZero() = 0
-fun Long?.orZero() = 0L
+fun Int?.orZero() = this ?: 0
+fun Long?.orZero() = this ?: 0L
 
-fun String?.orEmpty() = ""
+fun String?.orEmpty() = this ?: ""
 fun String?.orImageUrlPlaceholder() =
-    "https://roadmap-tech.com/wp-content/uploads/2019/04/placeholder-image.jpg"
+    this ?: "https://drive.google.com/uc?id=1KfpMNrTR1trdNqjjwbxZkaDObA61RIkC"

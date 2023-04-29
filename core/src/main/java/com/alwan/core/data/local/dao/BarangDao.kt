@@ -16,5 +16,5 @@ interface BarangDao {
     fun getBarangById(id: String): Flow<BarangEntity>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insertAll(vararg barangs: BarangEntity)
+    suspend fun insertAll(vararg barangs: BarangEntity)
 }

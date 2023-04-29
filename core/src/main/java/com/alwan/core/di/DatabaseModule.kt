@@ -13,13 +13,15 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
-import java.util.concurrent.Executors
 import javax.inject.Singleton
 
 @Module
@@ -30,12 +32,11 @@ class DatabaseModule {
     @Provides
     fun provideDatabase(
         @ApplicationContext context: Context,
-        databaseCallback: RoomDatabase.Callback
     ): BarangDatabase {
 
-        return Room.databaseBuilder(context, BarangDatabase::class.java, "Barang.db")
+        return Room.databaseBuilder(context, BarangDatabase::class.java, "barang-database.db")
             .fallbackToDestructiveMigration()
-            .addCallback(databaseCallback)
+            .createFromAsset("barang-database.db")
             .build()
     }
 
@@ -45,16 +46,18 @@ class DatabaseModule {
     @Provides
     fun provideDatabaseCallback(
         @ApplicationContext context: Context,
-        barangDao: BarangDao
     ) = object : RoomDatabase.Callback() {
         override fun onCreate(db: SupportSQLiteDatabase) {
-            Executors.newSingleThreadScheduledExecutor().execute {
-                fillWithStartingData(context, barangDao)
+            CoroutineScope(Dispatchers.IO).launch {
+                fillWithStartingData(
+                    context,
+                    provideBarangDao(provideDatabase(context))
+                )
             }
         }
     }
 
-    private fun fillWithStartingData(context: Context, dao: BarangDao) {
+    private suspend fun fillWithStartingData(context: Context, dao: BarangDao) {
         val barang = loadJsonArray(context)
         try {
             if (barang != null) {
